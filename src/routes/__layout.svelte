@@ -8,20 +8,24 @@
 </script>
 
 {#if ready}
-	<div class="dark:bg-black bg-white min-h-screen h-full wrapper">
-		<Navbar />
-		<slot  />
-	</div>
+	<Navbar />
+	<slot />
 {/if}
 
-<style >
+<style>
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
 	.wrapper {
 		transition: 0.1s linear;
 	}
-	:global(html.dark){
-		color:white
+	:global(html.dark) {
+		color: white;
+	}
+	:global(html.dark) {
+		background-color: black;
+	}
+	:global(html){
+		transition: 0.1s linear;
 	}
 </style>
